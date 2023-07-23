@@ -7,7 +7,7 @@
 
 <div class="description">
 	<div class="container">
-		<img src="{base}/{item?.img}" alt="" />
+		<img src="{base}/shop/{item?.img}" alt="" />
 		<div class="information">
 			<div class="description">
 				<h1>{item?.name}</h1>
