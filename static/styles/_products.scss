@@ -1,0 +1,135 @@
+@import 'variables';
+
+.products {
+	.container {
+		margin-top: 45px;
+
+		.info-wrapper {
+			display: flex;
+
+			h1 {
+				font-size: 60px;
+				margin: 0 70px 50px 0;
+				color: $mainTextColor;
+			}
+			s p {
+				font-size: 18px;
+			}
+
+			.products {
+				background: linear-gradient(210deg, rgba(35, 114, 73, 1), rgba(53, 198, 107, 1));
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+
+		.list {
+			ul {
+				display: flex;
+				align-items: center;
+				padding: 0;
+
+				li {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: 300px;
+					height: 500px;
+					border-radius: 2rem;
+					border: 1px solid $mainTextColor;
+					margin: 0 100px;
+
+					img {
+						min-width: 55%;
+						max-height: 55%;
+						object-fit: cover;
+					}
+
+					h3 {
+						margin: 0;
+						font-weight: 500;
+						font-size: 24px;
+					}
+
+					h4 {
+						margin: 0;
+						font-size: 24px;
+						font-weight: 500;
+						padding: 0 35px 0 0;
+					}
+
+					p {
+						text-align: center;
+						font-size: 16px;
+					}
+
+					.wrapper {
+						display: flex;
+						align-items: center;
+
+						p {
+							text-align: center;
+						}
+					}
+
+					.add-cart {
+						font-size: 16px;
+						width: 185px;
+						height: 45px;
+						cursor: pointer;
+						color: $mainTextColor;
+						background-image: linear-gradient(210deg, rgba(35, 114, 73, 1), rgba(53, 198, 107, 1));
+					}
+
+					.add-cart:hover {
+						background-image: linear-gradient(210deg, rgb(21, 80, 50), rgb(42, 164, 87));
+					}
+				}
+
+				.item:hover {
+					border: 1px solid greenyellow;
+					transition: 0.5s ease-in-out;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1615px) {
+	.products {
+		.container {
+			.list {
+				.items {
+					.item {
+						margin: 0 50px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1400px) {
+	.products {
+		.container {
+			.list {
+				.items {
+					flex-direction: column;
+					.item {
+						margin: 25px 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 840px) {
+	.products {
+		.container {
+			.info-wrapper {
+				flex-direction: column;
+			}
+		}
+	}
+}

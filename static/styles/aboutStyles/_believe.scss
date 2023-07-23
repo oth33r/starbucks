@@ -1,0 +1,17 @@
+.believe {
+	.container {
+		max-width: 1080px;
+		display: flex;
+		margin-top: 65px;
+		.info {
+			img {
+				width: 100%;
+			}
+			.believe-info {
+				p {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,113 @@
+@import '_variables';
+
+.footer {
+	margin-top: 100px;
+	background-color: $footerColor;
+	position: relative;
+	bottom: -90px;
+	min-height: 250px;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.logo {
+			// margin-top: 50px;
+			display: flex;
+		}
+
+		.menu {
+			display: flex;
+			font-size: 18px;
+			margin-top: 50px;
+			* {
+				font-weight: 200;
+				margin: 0 30px;
+
+				a {
+					margin: 0;
+				}
+
+				span {
+					margin-top: 5px;
+					display: block;
+					color: $secondTextColor;
+					font-size: 16px;
+				}
+			}
+
+			.main {
+				.intro-page:hover {
+					color: whitesmoke;
+				}
+			}
+
+			.products {
+				.americano:hover {
+					color: whitesmoke;
+				}
+
+				.cappuccino:hover {
+					color: whitesmoke;
+				}
+
+				.latte:hover {
+					color: whitesmoke;
+				}
+			}
+
+			.contacts {
+				.instagram:hover {
+					color: whitesmoke;
+				}
+
+				.phone:hover {
+					color: whitesmoke;
+				}
+			}
+		}
+
+		.slider {
+			display: flex;
+			cursor: pointer;
+		}
+	}
+}
+
+@media (max-width: 1160px) {
+	.footer {
+		.container {
+			.logo {
+				margin-top: 25px;
+			}
+
+			.menu {
+				* {
+					margin: 0 10px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 930px) {
+	.footer {
+		.container {
+			.logo {
+				margin: 65px 0;
+				align-self: flex-start;
+			}
+
+			.menu {
+				flex-wrap: wrap;
+				* {
+					margin: 10px 10px;
+				}
+			}
+
+			.slider {
+				align-self: flex-start;
+				margin: 85px 0;
+			}
+		}
+	}
+}

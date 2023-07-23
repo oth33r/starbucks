@@ -1,0 +1,17 @@
+.people {
+	.container {
+		max-width: 1080px;
+		display: flex;
+		margin-top: 65px;
+		.info {
+			img {
+				width: 100%;
+			}
+			.people-info {
+				p {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}

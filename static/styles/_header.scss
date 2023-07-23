@@ -1,0 +1,175 @@
+@import '_variables';
+
+.header {
+	width: 100%;
+	padding: 10px 0;
+	.container {
+		display: flex;
+		align-items: center;
+		margin-top: 10px;
+
+		.header-title {
+			margin-right: 100px;
+			.title {
+				font-size: 38px;
+				font-weight: 800;
+				letter-spacing: -1px;
+			}
+		}
+
+		.navbar {
+			.home {
+				position: relative;
+			}
+
+			.home::after {
+				content: '';
+				position: absolute;
+				background-color: white;
+				height: 3px;
+				width: 0;
+				left: 0;
+				bottom: -3px;
+				transition: 0.3s;
+			}
+
+			.home:hover::after {
+				width: 100%;
+			}
+
+			.about {
+				position: relative;
+			}
+
+			.about::after {
+				content: '';
+				position: absolute;
+				background-color: white;
+				height: 3px;
+				width: 0;
+				left: 0;
+				bottom: -3px;
+				transition: 0.3s;
+			}
+
+			.about:hover::after {
+				width: 100%;
+			}
+
+			.shop {
+				position: relative;
+			}
+
+			.shop::after {
+				content: '';
+				position: absolute;
+				background-color: white;
+				height: 3px;
+				width: 0;
+				left: 0;
+				bottom: -3px;
+				transition: 0.3s;
+			}
+
+			.shop:hover::after {
+				width: 100%;
+			}
+		}
+
+		ul {
+			display: flex;
+			padding: 0;
+			margin: 0;
+
+			li {
+				padding-right: 70px;
+				a {
+					font-size: 20px;
+					color: $mainTextColor;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 885px) {
+	.header {
+		.container {
+			justify-content: space-between;
+			.header-title {
+				margin-right: 35px;
+				.title {
+					font-size: 24px;
+				}
+			}
+
+			ul {
+				li {
+					padding: 0 0 0 50px;
+					a {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 700px) {
+	.header {
+		.container {
+			justify-content: space-between;
+
+			.navbar {
+				display: none;
+			}
+
+			.burger__header {
+				position: relative;
+				width: 40px;
+				height: 20px;
+
+				span,
+				&:after,
+				&:before {
+					border-radius: 1rem;
+					height: 2px;
+					position: absolute;
+					width: 100%;
+					margin: 0 auto;
+					background-image: linear-gradient(210deg, rgba(35, 114, 73, 1), rgba(53, 198, 107, 1));
+				}
+
+				span {
+					top: 8px;
+				}
+
+				&:after {
+					content: '';
+					top: 1px;
+				}
+
+				&:before {
+					content: '';
+					bottom: 2px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.header {
+		.container {
+			.header-title {
+				margin-right: 20px;
+				a {
+					align-self: center;
+					svg {
+						width: 150px;
+					}
+				}
+			}
+		}
+	}
+}
