@@ -2,6 +2,7 @@ import { initializeApp } from 'firebase/app';
 import 'firebase/functions';
 import { getDatabase, ref, update } from 'firebase/database';
 import type { Cart } from './cartModel';
+import { cart } from './cart';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -21,33 +22,57 @@ const app = initializeApp(firebaseConfig);
 console.log(app.name);
 const database = getDatabase();
 
-export const addToCart = (prodName: string, prodPrice: string, prodVolume: string) => {
-	const name = document.querySelector(prodName);
-	const price = document.querySelector(prodPrice);
-	const volume = document.querySelector(prodVolume);
-	if (!name || !price || !volume) return;
-
-	console.log(name.textContent);
-	console.log(price.textContent);
-	console.log(volume.textContent);
-
-	const id = genrateRandomNumber(1, 1000).toString();
-	console.log(id);
-};
-
+// generates a random number
 const genrateRandomNumber = (min: number, max: number) => {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+// saves data to firebase realtime database
 export const saveToFirebase = (cart: Cart) => {
 	const orderID = genrateRandomNumber(1, 1000).toString();
 	cart.products.forEach((item, index) => {
 		update(ref(database, '/orders/' + orderID + '/item-' + index), {
 			name: item.name,
 			price: item.price,
-			volume: item.volume
+			volume: item.volume,
+			amount: item.amount
 		});
 	});
+};
+
+let tapCounter = 0;
+
+// on:click|preventDefault={() => {showCartElements(cart);}}
+
+// creates elements to be stored in the cart modal window
+export const showCartElements = async () => {
+	tapCounter += 1;
+
+	if (tapCounter % 2 === 1) {
+		//  && !(displayedCart === cart)) {
+		cart.products.forEach((product) => {
+			const product_li = document.createElement('li');
+			product_li.textContent =
+				product.name + '  ' + product.price + '  ' + product.volume + ' ' + product.amount;
+
+			document.getElementById('cart-items')?.appendChild(product_li);
+		});
+		const orderButton = document.createElement('button');
+		orderButton.id = 'order-button';
+		orderButton.textContent = 'Order';
+		orderButton.onclick = () => saveToFirebase(cart);
+		document.getElementById('cart-items')?.appendChild(orderButton);
+	} else {
+		await clearDisplayedCart();
+	}
+};
+
+// clears elements from the modal window
+const clearDisplayedCart = async () => {
+	cart.products.forEach(() => {
+		document.getElementById('cart-items')?.firstChild?.remove();
+	});
+	document.getElementById('order-button')?.remove();
 };

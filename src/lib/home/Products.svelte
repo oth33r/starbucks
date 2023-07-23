@@ -27,7 +27,7 @@
 						class="add-cart"
 						on:click|preventDefault={() => {
 							addToCart(
-								createProductModel('#item1', '#item1-price', '#item1-volume') ?? new Product()
+								createProductModel('#item1-name', '#item1-price', '#item1-volume') ?? new Product()
 							);
 						}}
 					>
@@ -46,7 +46,7 @@
 						class="add-cart"
 						on:click|preventDefault={() => {
 							addToCart(
-								createProductModel('#item2', '#item2-price', '#item2-volume') ?? new Product()
+								createProductModel('#item2-name', '#item2-price', '#item2-volume') ?? new Product()
 							);
 						}}>Add to cart</button
 					>
@@ -63,7 +63,7 @@
 						class="add-cart"
 						on:click|preventDefault={() => {
 							addToCart(
-								createProductModel('#item3', '#item3-price', '#item3-volume') ?? new Product()
+								createProductModel('#item3-name', '#item3-price', '#item3-volume') ?? new Product()
 							);
 						}}>Add to cart</button
 					>

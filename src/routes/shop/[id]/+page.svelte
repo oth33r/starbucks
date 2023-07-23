@@ -3,6 +3,8 @@
 	import { items } from '$lib/card';
 	const item = items.find((item) => item.name.toLowerCase() == data.name);
 	import { base } from '$app/paths';
+	import { addToCart } from '$lib/cart.js';
+	import { Product } from '$lib/productModel.js';
 </script>
 
 <div class="description">
@@ -17,7 +19,17 @@
 				<div class="cost">
 					<span class="new">{item?.cost}$</span><span class="old">10$</span>
 				</div>
-				<button>Order a coffee</button>
+				<button
+					on:click|preventDefault={() => {
+						addToCart(
+							new Product({
+								prodName: item?.name ?? '',
+								prodPrice: item?.cost.toString() ?? '',
+								prodVolume: item?.volume ?? ''
+							}) ?? new Product()
+						);
+					}}>Order a coffee</button
+				>
 			</div>
 		</div>
 	</div>

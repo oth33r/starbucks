@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { showCartElements } from './firebase';
 </script>
 
 <div class="header" id="header">
@@ -41,6 +42,28 @@
 				<li><a class="home" href="{base}/">Home</a></li>
 				<li><a class="about" href="{base}/about">About</a></li>
 				<li><a class="shop" href="{base}/shop">Shop</a></li>
+				<button class="section full-height">
+					<input
+						class="modal-btn"
+						type="checkbox"
+						id="modal-btn"
+						name="modal-btn"
+						style="opacity:0;"
+						on:change={() => {
+							showCartElements();
+						}}
+					/>
+					<label for="modal-btn">Cart</label>
+					<div class="modal">
+						<div class="modal-wrap">
+							<p>Set up your cart here</p>
+							<ul
+								id="cart-items"
+								style="display: flex; flex-direction:column; margin-top:8px; color:black; justify-content:center; padding:0;"
+							/>
+						</div>
+					</div>
+				</button>
 			</ul>
 		</nav>
 	</div>
