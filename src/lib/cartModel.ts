@@ -63,4 +63,14 @@ export class Cart {
 		}
 		return true;
 	};
+
+  getTotalPrice = () => {
+    const $products = get(this.products);
+    let totalCost = 0.00;
+    $products.forEach((item) => {
+      totalCost += item.price;
+    });
+
+    return totalCost;
+  }
 }
