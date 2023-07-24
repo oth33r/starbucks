@@ -46,32 +46,32 @@
 				<li><a class="home" href="{base}/">Home</a></li>
 				<li><a class="about" href="{base}/about">About</a></li>
 				<li><a class="shop" href="{base}/shop">Shop</a></li>
-				<li>
-					<button class="section full-height">
-						<input
-							class="modal-btn"
-							type="checkbox"
-							id="modal-btn"
-							name="modal-btn"
-							style="opacity:0;"
-						/>
-						<label for="modal-btn">Cart</label>
-						<div class="modal">
-							<div class="modal-wrap">
-								<h1>Checkout</h1>
-								<hr />
-								<div class="cart">
-									<div class="cart-container">
-										<ul>
-											{#each $products as product}
-												<Cart {product} />
-											{/each}
-										</ul>
-									</div>
-								</div>
-								<hr />
-								<h3>Total cost:</h3>
-							</div>
+				<button class="section full-height">
+					<input
+						class="modal-btn"
+						type="checkbox"
+						id="modal-btn"
+						name="modal-btn"
+						style="opacity:0;"
+						on:change={() => {
+							showCartElements();
+						}}
+					/>
+					<label for="modal-btn"><i class="fa-solid fa-cart-shopping fa-lg"></i></label>
+					<div class="modal">
+						<div class="modal-wrap">
+							<p>Set up your cart here</p>
+							<ul
+								class="cart-items"
+								id="cart-items"
+								style="display: flex;
+									flex-direction:column;
+									margin-top:8px;
+									color:black;
+									justify-content:center;
+									align-items:center;
+									padding:0;"
+							/>
 						</div>
 					</button>
 				</li>

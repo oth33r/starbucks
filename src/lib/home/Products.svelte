@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import { addToCart } from '$lib/cart';
 	import { Product, createProductModel } from '$lib/productModel';
+	import '@fortawesome/fontawesome-free/css/all.css'
 </script>
 
 <div class="products">
@@ -29,10 +30,7 @@
 							addToCart(
 								createProductModel('#item1-name', '#item1-price', '#item1-volume') ?? new Product()
 							);
-						}}
-					>
-						Add to cart
-					</button>
+						}}>Add to cart</button>
 				</li>
 				<li class="item item2" id="item2">
 					<img src="{base}/img/yellow.png" alt="Coffee" />
