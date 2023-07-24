@@ -1,10 +1,10 @@
 export class Product {
-	name = '';
-	price = '';
-	volume = '';
-	amount = 1;
+	name: string;
+	price: number = 0.00;
+	volume: string;
+	amount: number = 1;
 
-	constructor({ prodName = '', prodPrice = '', prodVolume = '' } = {}) {
+	constructor({ prodName = '', prodPrice = 0.00, prodVolume = '' } = {}) {
 		this.name = prodName;
 		this.price = prodPrice;
 		this.volume = prodVolume;
@@ -44,7 +44,7 @@ export const createProductModel = (prodName: string, prodPrice: string, prodVolu
 
 	return new Product({
 		prodName: name.textContent?.toString() ?? '',
-		prodPrice: price.textContent?.toString() ?? '',
+		prodPrice: Number(price.textContent) ?? 0.00,
 		prodVolume: volume.textContent?.toString() ?? ''
 	});
 };

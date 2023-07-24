@@ -3,7 +3,7 @@ export const scrollToElement = (selector: string) => {
 	if (!element) return;
 
 	const position = element.getBoundingClientRect().top;
-	const offset = position + window.pageYOffset;
+	const offset = position + window.scrollY;
 
 	window.scrollTo({
 		top: offset,

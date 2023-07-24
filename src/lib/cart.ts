@@ -6,7 +6,6 @@ export const cart = new Cart();
 export const addToCart = (product: Product) => {
 	if (cart.isOverflowed()) return;
 	cart.addToCart(product);
-	console.log(cart.products.length);
 };
 
 export const removeFromCart = (product: Product) => {
@@ -16,3 +15,7 @@ export const removeFromCart = (product: Product) => {
 export const saveToFirebase = () => {
 	cart.saveToFirebase();
 };
+
+export const getTotalPrice = () => {
+  return cart.getTotalPrice();
+}

@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { showCartElements } from './firebase';
+	import { cart } from '$lib/cart';
+	import Cart from '$lib/Cart.svelte';
+
+	const { products } = cart;
 </script>
 
 <div class="header" id="header">
@@ -69,8 +73,8 @@
 									padding:0;"
 							/>
 						</div>
-					</div>
-				</button>
+					</button>
+				</li>
 			</ul>
 		</nav>
 	</div>

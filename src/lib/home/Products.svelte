@@ -21,7 +21,7 @@
 					<h3 id="item1-name">Americano</h3>
 					<p>An invigorating <br />hot Americano</p>
 					<div class="wrapper">
-						<h4 id="item1-price">3.5</h4>
+						<h4 id="item1-price">3.5$</h4>
 						<p id="item1-volume">330 ml</p>
 					</div>
 					<button
@@ -37,7 +37,7 @@
 					<h3 id="item2-name">Latte</h3>
 					<p>Twice as much foam as in Cappuccino</p>
 					<div class="wrapper">
-						<h4 id="item2-price">4</h4>
+						<h4 id="item2-price">4$</h4>
 						<p id="item2-volume">330 ml</p>
 					</div>
 					<button
@@ -54,7 +54,7 @@
 					<h3 id="item3-name">Cappuccino</h3>
 					<p>Airy foam, espresso and hot milk - that's our Cappuccino</p>
 					<div class="wrapper">
-						<h4 id="item3-price">5.5</h4>
+						<h4 id="item3-price">5.5$</h4>
 						<p id="item3-volume">330 ml</p>
 					</div>
 					<button

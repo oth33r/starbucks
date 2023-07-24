@@ -33,56 +33,16 @@ const genrateRandomNumber = (min: number, max: number) => {
 // saves data to firebase realtime database
 export const saveToFirebase = (cart: Cart) => {
 	const orderID = genrateRandomNumber(1, 1000).toString();
-	cart.products.forEach((item, index) => {
-		update(ref(database, '/orders/' + orderID + '/item-' + index), {
-			name: item.name,
-			price: item.price,
-			volume: item.volume,
-			amount: item.amount
-		});
-	});
-};
 
-let tapCounter = 0;
-
-// on:click|preventDefault={() => {showCartElements(cart);}}
-
-// creates elements to be stored in the cart modal window
-export const showCartElements = async () => {
-	tapCounter += 1;
-
-	if (tapCounter % 2 === 1) {
-		//  && !(displayedCart === cart)) {
-		cart.products.forEach((product) => {
-			const product_li = document.createElement('li');
-			product_li.textContent =
-				'Name: ' + product.name + ' Price: ' + product.price + '$' + ' Volume: ' + product.volume + '  Amount: ' + product.amount;
-
-			document.getElementById('cart-items')?.appendChild(product_li);
-		});
-
-		const orderButton = document.createElement('button');
-		orderButton.id = 'order-button';
-		orderButton.textContent = 'Order';
-
-		orderButton.style.background = 'linear-gradient(210deg, rgba(35, 114, 73, 1), rgba(53, 198, 107, 1))';
-		orderButton.style.width = '200px';
-		orderButton.style.cursor = 'pointer';
-		// orderButton.style.marginLeft = '50px';
-
-		
-		orderButton.onclick = () => saveToFirebase(cart);
-		document.getElementById('cart-items')?.appendChild(orderButton);
-		return orderButton.style;
-	} else {
-		await clearDisplayedCart();
-	}
-};
-
-// clears elements from the modal window
-const clearDisplayedCart = async () => {
-	cart.products.forEach(() => {
-		document.getElementById('cart-items')?.firstChild?.remove();
-	});
-	document.getElementById('order-button')?.remove();
+  cart.products.update((products) => {
+    products.forEach((item, index) => {
+      update(ref(database, '/orders/' + orderID + '/item-' + index), {
+        name: item.name,
+        price: item.price,
+        volume: item.volume,
+        amount: item.amount
+      });
+    });
+    return products;
+  });
 };
