@@ -72,8 +72,9 @@
 									class="order"
 									on:click|preventDefault={() => {
 										cart.saveToFirebase();
-									}}>Order</button
-								>
+									}}
+									>Order
+								</button>
 							</div>
 						</div>
 					</button>
