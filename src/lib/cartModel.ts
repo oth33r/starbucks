@@ -1,8 +1,9 @@
 import type { Product } from '$lib/productModel';
+import { get, writable } from 'svelte/store';
 import { saveToFirebase } from './firebase';
 
 export class Cart {
-	products: Product[] = [];
+	products = writable<Product[]>([]);
 
 	// adds a product to the cart. If the product already exists in the cart => increases its amount
 	addToCart = (product: Product) => {
@@ -14,28 +15,35 @@ export class Cart {
 
 		let amountIncreased = false;
 
-		this.products.forEach((item, index) => {
-			if (item.sameAs(product)) {
-				this.products[index].increaseAmount();
-				console.log('product amount got increased!');
-				amountIncreased = true;
+		this.products.update((products) => {
+			products.forEach((item, index) => {
+				if (item.sameAs(product)) {
+					products[index].increaseAmount();
+					console.log('product amount got increased!');
+					amountIncreased = true;
+				}
+			});
+			if (!amountIncreased) {
+				products = [...products, product];
+				console.log('a new product created!');
 			}
+			return products;
 		});
-		if (!amountIncreased) {
-			this.products.push(product);
-			console.log('a new product created!');
-		}
 	};
 
 	// decreases the amount of product given. If amount is less than 1 => removes the element from the cart
 	removeFromCart = (product: Product) => {
-		this.products.forEach((item, index) => {
-			if (item === product) {
-				this.products[index].decreaseAmount();
-				if (this.products[index].amount == 0) {
-					this.products.splice(index);
+		this.products.update((products) => {
+			products.forEach((item, index) => {
+				if (item === product) {
+					products[index].decreaseAmount();
+					if (products[index].amount == 0) {
+						products.splice(index);
+					}
 				}
-			}
+			});
+
+			return products;
 		});
 	};
 
@@ -44,16 +52,13 @@ export class Cart {
 	};
 
 	hasElement = (product: Product): boolean => {
-		this.products.forEach((item) => {
-			if (product.sameAs(item)) {
-				return true;
-			}
-		});
-		return false;
+		const $products = get(this.products);
+		return $products.some((item) => product.sameAs(item));
 	};
 
 	isOverflowed = () => {
-		if (this.products.length < 9) {
+		const $products = get(this.products);
+		if ($products.length < 9) {
 			return false;
 		}
 		return true;

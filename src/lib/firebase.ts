@@ -55,7 +55,7 @@ export const showCartElements = async () => {
 		cart.products.forEach((product) => {
 			const product_li = document.createElement('li');
 			product_li.textContent =
-				product.name + '  ' + product.price + '  ' + product.volume + ' ' + product.amount;
+				product.name + '  ' + product.price + '$  ' + product.volume + ' ' + product.amount;
 
 			document.getElementById('cart-items')?.appendChild(product_li);
 		});

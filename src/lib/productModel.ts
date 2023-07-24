@@ -1,8 +1,8 @@
 export class Product {
-	name = '';
-	price = '';
-	volume = '';
-	amount = 1;
+	name: string;
+	price: string;
+	volume: string;
+	amount: number = 1;
 
 	constructor({ prodName = '', prodPrice = '', prodVolume = '' } = {}) {
 		this.name = prodName;
