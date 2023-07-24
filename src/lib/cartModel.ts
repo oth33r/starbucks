@@ -35,7 +35,7 @@ export class Cart {
 	removeFromCart = (product: Product) => {
 		this.products.update((products) => {
 			products.forEach((item, index) => {
-				if (item === product) {
+				if (item.sameAs(product)) {
 					products[index].decreaseAmount();
 					if (products[index].amount == 0) {
 						products.splice(index);
@@ -62,16 +62,5 @@ export class Cart {
 			return false;
 		}
 		return true;
-	};
-
-	getTotalPrice = () => {
-		const $products = get(this.products);
-		let totalCost = 0.0;
-		$products.forEach((item) => {
-			console.log(item);
-			// totalCost += item.price * item.amount;
-		});
-
-		return totalCost;
 	};
 }

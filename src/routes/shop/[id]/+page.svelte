@@ -24,7 +24,7 @@
 						addToCart(
 							new Product({
 								prodName: item?.name ?? '',
-								prodPrice: item?.cost.toString() ?? '',
+								prodPrice: item?.cost ?? 0.0,
 								prodVolume: item?.volume ?? ''
 							}) ?? new Product()
 						);

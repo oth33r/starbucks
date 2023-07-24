@@ -15,7 +15,3 @@ export const removeFromCart = (product: Product) => {
 export const saveToFirebase = () => {
 	cart.saveToFirebase();
 };
-
-export const getTotalPrice = () => {
-  return cart.getTotalPrice();
-}

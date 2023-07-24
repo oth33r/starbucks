@@ -34,14 +34,5 @@ export const items: Items[] = [
 			'Americano is a type of coffee drink prepared by diluting an espresso with hot water (typically 1:5), giving it a different flavor from traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added.',
 		cost: 3.49,
 		volume: '330 ml'
-	},
-	{
-		id: '4',
-		name: 'Espresso',
-		img: '../img/green.png',
-		description:
-			'Espresso is a coffee-brewing method of Italian origin, in which a small amount of nearly boiling water (about 90 °C or 190 °F) is forced under 9–10 bars (900–1,000 kPa; 130–150 psi) of pressure through finely-ground coffee beans. ',
-		cost: 6.99,
-		volume: '330 ml'
 	}
 ];

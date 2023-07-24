@@ -1,7 +1,7 @@
 <script src="https://kit.fontawesome.com/1fd736d5c6.js" crossorigin="anonymous">
 	import { base } from '$app/paths';
 	import { scrollToElement } from '$lib/scroll';
-	import '@fortawesome/fontawesome-free/css/all.css';
+	// import '@fortawesome/fontawesome-free/css/all.css';
 </script>
 
 <div class="footer">

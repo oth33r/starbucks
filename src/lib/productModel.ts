@@ -1,21 +1,21 @@
 export class Product {
 	name: string;
-	price: number = 0.00;
+	price = 0.0;
 	volume: string;
-	amount: number = 1;
+	amount = 1;
 
-	constructor({ prodName = '', prodPrice = 0.00, prodVolume = '' } = {}) {
+	constructor({ prodName = '', prodPrice = 0.0, prodVolume = '' } = {}) {
 		this.name = prodName;
 		this.price = prodPrice;
 		this.volume = prodVolume;
 	}
 
 	increaseAmount = () => {
-		this.amount += 1;
+		this.amount++;
 	};
 
 	decreaseAmount = () => {
-		this.amount -= 1;
+		this.amount--;
 	};
 
 	sameAs = (product: Product): boolean => {
@@ -44,7 +44,7 @@ export const createProductModel = (prodName: string, prodPrice: string, prodVolu
 
 	return new Product({
 		prodName: name.textContent?.toString() ?? '',
-		prodPrice: Number(price.textContent) ?? 0.00,
+		prodPrice: Number(price.textContent) ?? 0.0,
 		prodVolume: volume.textContent?.toString() ?? ''
 	});
 };

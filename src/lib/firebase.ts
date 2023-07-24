@@ -2,8 +2,6 @@ import { initializeApp } from 'firebase/app';
 import 'firebase/functions';
 import { getDatabase, ref, update } from 'firebase/database';
 import type { Cart } from './cartModel';
-import { cart } from './cart';
-
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -34,15 +32,15 @@ const genrateRandomNumber = (min: number, max: number) => {
 export const saveToFirebase = (cart: Cart) => {
 	const orderID = genrateRandomNumber(1, 1000).toString();
 
-  cart.products.update((products) => {
-    products.forEach((item, index) => {
-      update(ref(database, '/orders/' + orderID + '/item-' + index), {
-        name: item.name,
-        price: item.price,
-        volume: item.volume,
-        amount: item.amount
-      });
-    });
-    return products;
-  });
+	cart.products.update((products) => {
+		products.forEach((item, index) => {
+			update(ref(database, '/orders/' + orderID + '/item-' + index), {
+				name: item.name,
+				price: item.price,
+				volume: item.volume,
+				amount: item.amount
+			});
+		});
+		return products;
+	});
 };
