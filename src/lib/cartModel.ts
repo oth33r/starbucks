@@ -64,13 +64,14 @@ export class Cart {
 		return true;
 	};
 
-  getTotalPrice = () => {
-    const $products = get(this.products);
-    let totalCost = 0.00;
-    $products.forEach((item) => {
-      totalCost += item.price;
-    });
+	getTotalPrice = () => {
+		const $products = get(this.products);
+		let totalCost = 0.0;
+		$products.forEach((item) => {
+			console.log(item);
+			// totalCost += item.price * item.amount;
+		});
 
-    return totalCost;
-  }
+		return totalCost;
+	};
 }

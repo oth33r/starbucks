@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { showCartElements } from './firebase';
 	import { cart } from '$lib/cart';
 	import Cart from '$lib/Cart.svelte';
 
@@ -69,8 +68,12 @@
 										</ul>
 									</div>
 								</div>
-								<hr />
-								<h3>Total cost:</h3>
+								<button
+									class="order"
+									on:click|preventDefault={() => {
+										cart.saveToFirebase();
+									}}>Order</button
+								>
 							</div>
 						</div>
 					</button>
