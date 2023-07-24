@@ -1,8 +1,8 @@
-<script lang="ts">
+<script lang="ts" src="https://kit.fontawesome.com/1fd736d5c6.js" crossorigin="anonymous">
 	import { base } from '$app/paths';
 	import { addToCart } from '$lib/cart';
-	import { Product, createProductModel } from '$lib/productModel';
-	// import '@fortawesome/fontawesome-free/css/all.css'
+	import { createProductModel, Product } from '$lib/productModel';
+	import '@fortawesome/fontawesome-free/css/all.css';
 </script>
 
 <div class="products">

@@ -69,6 +69,12 @@
 		.slider {
 			display: flex;
 			cursor: pointer;
+			.fa-arrow-up-long {
+				color: #d9d9d9;
+			}
+			.fa-arrow-up-long:hover {
+				color: white;
+			}
 		}
 	}
 }

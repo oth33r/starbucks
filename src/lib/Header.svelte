@@ -54,7 +54,7 @@
 							name="modal-btn"
 							style="opacity:0;"
 						/>
-						<label for="modal-btn">Cart</label>
+						<label for="modal-btn"><i class="fa-solid fa-cart-shopping fa-lg" /></label>
 						<div class="modal">
 							<div class="modal-wrap">
 								<h1>Checkout</h1>
