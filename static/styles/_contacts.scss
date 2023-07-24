@@ -56,6 +56,18 @@
 	.contacts {
 		.container {
 			flex-direction: column;
+
+			.photo {
+				width: 325px;
+
+				img {
+					width: 350px;
+				}
+
+				svg {
+					height: 500px;
+				}
+			}
 		}
 	}
 }

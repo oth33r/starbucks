@@ -1,7 +1,8 @@
-<script lang="ts">
+<script lang="ts" src="https://kit.fontawesome.com/1fd736d5c6.js" crossorigin="anonymous">
 	import { base } from '$app/paths';
 	import { cart } from '$lib/cart';
 	import Cart from '$lib/Cart.svelte';
+	import '@fortawesome/fontawesome-free/css/all.css';
 
 	const { products } = cart;
 </script>
@@ -35,11 +36,6 @@
 				</defs>
 			</svg>
 		</div>
-
-		<div class="burger__header">
-			<span />
-		</div>
-
 		<nav class="navbar">
 			<ul>
 				<li><a class="home" href="{base}/">Home</a></li>

@@ -31,6 +31,7 @@
 			}
 
 			.order {
+				opacity: 1;
 				width: 250px;
 				height: 35px;
 				background-image: linear-gradient(210deg, rgba(35, 114, 73, 1), rgba(53, 198, 107, 1));
@@ -38,6 +39,15 @@
 
 			.order:hover {
 				background-image: linear-gradient(210deg, rgb(21, 80, 50), rgb(42, 164, 87));
+			}
+
+			ul {
+				display: flex;
+				align-items: center;
+			}
+
+			.modal-btn {
+				position: absolute;
 			}
 
 			.cart-container {
@@ -149,8 +159,8 @@
 				text-align: center;
 				line-height: 30px;
 				font-size: 16px;
-				background-color: #ffeba7;
-				color: #0b5a32;
+				background-color: #0b5a32;
+				color: white;
 				content: 'X';
 				opacity: 0;
 				pointer-events: none;
@@ -276,8 +286,9 @@
 			}
 
 			ul {
+				gap: 10px;
 				li {
-					padding: 0 0 0 50px;
+					padding: 0;
 					a {
 						font-size: 14px;
 					}
@@ -291,41 +302,6 @@
 	.header {
 		.container {
 			justify-content: space-between;
-
-			.navbar {
-				display: none;
-			}
-
-			.burger__header {
-				position: relative;
-				width: 40px;
-				height: 20px;
-
-				span,
-				&:after,
-				&:before {
-					border-radius: 1rem;
-					height: 2px;
-					position: absolute;
-					width: 100%;
-					margin: 0 auto;
-					background-image: linear-gradient(210deg, rgba(35, 114, 73, 1), rgba(53, 198, 107, 1));
-				}
-
-				span {
-					top: 8px;
-				}
-
-				&:after {
-					content: '';
-					top: 1px;
-				}
-
-				&:before {
-					content: '';
-					bottom: 2px;
-				}
-			}
 		}
 	}
 }
@@ -341,6 +317,10 @@
 						width: 150px;
 					}
 				}
+			}
+
+			ul {
+				flex-wrap: wrap;
 			}
 		}
 	}
