@@ -22,7 +22,8 @@
 					<div class="wrapper">
 						<h4 id="item1-price">3.5</h4>
 						<p id="item1-volume">330 ml</p>
-					</div>ffffffffffffffff
+					</div>
+					ffffffffffffffff
 					<button
 						class="add-cart"
 						on:click|preventDefault={() => {
