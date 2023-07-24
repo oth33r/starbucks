@@ -1,8 +1,8 @@
 <script>
-	import Benefits from '$lib/home/Benefits.svelte';
 	import Contacts from '$lib/home/Contacts.svelte';
-	import Products from '$lib/home/Products.svelte';
+	// import Products from '$lib/home/Products.svelte';
 	import Welcome from '$lib/home/Welcome.svelte';
+	import Benefits from '$lib/home/Benefits.svelte';
 </script>
 
 <main>
@@ -10,7 +10,7 @@
 
 	<Benefits />
 
-	<Products />
+	<!-- <Products /> -->
 
 	<Contacts />
 </main>
