@@ -1,7 +1,7 @@
 <script src="https://kit.fontawesome.com/1fd736d5c6.js" crossorigin="anonymous">
 	import { base } from '$app/paths';
 	import { scrollToElement } from '$lib/scroll';
-	// import '@fortawesome/fontawesome-free/css/all.css';
+	import '@fortawesome/fontawesome-free/css/all.css';
 </script>
 
 <div class="footer">
@@ -42,13 +42,13 @@
 			</div>
 			<div class="products">
 				<h5>Products</h5>
-				<a href="{base}/" on:click|preventDefault={() => scrollToElement('#product')}
+				<a href="{base}/" on:click|preventDefault={() => scrollToElement('#item1')}
 					><span class="americano">Americano</span></a
 				>
-				<a href="{base}/" on:click|preventDefault={() => scrollToElement('#product')}
+				<a href="{base}/" on:click|preventDefault={() => scrollToElement('#item2')}
 					><span class="latte">Latte</span></a
 				>
-				<a href="{base}/" on:click|preventDefault={() => scrollToElement('#product')}
+				<a href="{base}/" on:click|preventDefault={() => scrollToElement('#item3')}
 					><span class="cappuccino">Cappuccino</span></a
 				>
 			</div>

@@ -38,7 +38,7 @@ export class Cart {
 				if (item.sameAs(product)) {
 					products[index].decreaseAmount();
 					if (products[index].amount == 0) {
-						products.splice(index);
+						products.splice(index, 1);
 					}
 				}
 			});
