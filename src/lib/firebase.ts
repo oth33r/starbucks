@@ -4,6 +4,7 @@ import { getDatabase, ref, update } from 'firebase/database';
 import type { Cart } from './cartModel';
 import { cart } from './cart';
 
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -55,15 +56,24 @@ export const showCartElements = async () => {
 		cart.products.forEach((product) => {
 			const product_li = document.createElement('li');
 			product_li.textContent =
-				product.name + '  ' + product.price + '  ' + product.volume + ' ' + product.amount;
+				'Name: ' + product.name + ' Price: ' + product.price + '$' + ' Volume: ' + product.volume + '  Amount: ' + product.amount;
 
 			document.getElementById('cart-items')?.appendChild(product_li);
 		});
+
 		const orderButton = document.createElement('button');
 		orderButton.id = 'order-button';
 		orderButton.textContent = 'Order';
+
+		orderButton.style.background = 'linear-gradient(210deg, rgba(35, 114, 73, 1), rgba(53, 198, 107, 1))';
+		orderButton.style.width = '200px';
+		orderButton.style.cursor = 'pointer';
+		// orderButton.style.marginLeft = '50px';
+
+		
 		orderButton.onclick = () => saveToFirebase(cart);
 		document.getElementById('cart-items')?.appendChild(orderButton);
+		return orderButton.style;
 	} else {
 		await clearDisplayedCart();
 	}

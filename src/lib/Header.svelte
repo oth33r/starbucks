@@ -53,13 +53,20 @@
 							showCartElements();
 						}}
 					/>
-					<label for="modal-btn">Cart</label>
+					<label for="modal-btn"><i class="fa-solid fa-cart-shopping fa-lg"></i></label>
 					<div class="modal">
 						<div class="modal-wrap">
 							<p>Set up your cart here</p>
 							<ul
+								class="cart-items"
 								id="cart-items"
-								style="display: flex; flex-direction:column; margin-top:8px; color:black; justify-content:center; padding:0;"
+								style="display: flex;
+									flex-direction:column;
+									margin-top:8px;
+									color:black;
+									justify-content:center;
+									align-items:center;
+									padding:0;"
 							/>
 						</div>
 					</div>
