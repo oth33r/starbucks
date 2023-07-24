@@ -58,10 +58,10 @@
 						<label for="modal-btn">Cart</label>
 						<div class="modal">
 							<div class="modal-wrap">
+								<h1>Checkout</h1>
+								<hr />
 								<div class="cart">
 									<div class="cart-container">
-										<h1>Checkout</h1>
-										<hr />
 										<ul>
 											{#each $products as product}
 												<Cart {product} />
@@ -69,6 +69,8 @@
 										</ul>
 									</div>
 								</div>
+								<hr />
+								<h3>Total cost:</h3>
 							</div>
 						</div>
 					</button>

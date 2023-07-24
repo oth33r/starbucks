@@ -22,6 +22,42 @@
 				position: relative;
 			}
 
+			h1 {
+				color: $secondBgColor;
+			}
+
+			h3 {
+				color: $secondBgColor;
+			}
+
+			.cart-container {
+				display: flex;
+				justify-content: flex-start;
+				ul {
+					min-width: 100%;
+					display: flex;
+					flex-direction: column;
+				}
+
+				li {
+					display: flex;
+					justify-content: space-between;
+					color: $secondBgColor;
+
+					h3 {
+						color: $secondBgColor;
+						font-weight: 400;
+					}
+
+					.item-info {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+					}
+				}
+			}
+
 			.home::after {
 				content: '';
 				position: absolute;
