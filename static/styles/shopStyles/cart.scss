@@ -12,6 +12,7 @@
 				padding: 10px 30px;
 				background-color: $mainTextColor;
 				border-radius: 1.5rem;
+				min-width: 450px;
 			}
 		}
 
@@ -24,6 +25,18 @@
 
 			button:hover {
 				background-image: linear-gradient(210deg, rgb(21, 80, 50), rgb(42, 164, 87));
+			}
+		}
+	}
+}
+
+@media (max-width: 700px) {
+	.cart {
+		.cart-container {
+			ul {
+				li {
+					min-width: 375px;
+				}
 			}
 		}
 	}
