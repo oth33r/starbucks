@@ -43,7 +43,6 @@
 			<div class="info">
 				<h3>{item.name}</h3>
 				<p>{item.cost}$</p>
-				<button>Order coffee</button>
 			</div>
 		</div>
 	</a>
